@@ -1,0 +1,45 @@
+# Compiled files
+target/
+out/
+
+# IDE files (IntelliJ IDEA)
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Visual Studio Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Local configuration
+application-local.properties
+*.local.properties
+
+# Maven
+.dbeaver/
+.mvn/
+mvnw
+mvnw.cmd
+
+# Database
+*.db
+*.sqlite
+
+# Sensitive data (пароли, ключи)
+*.secret
+*.key
