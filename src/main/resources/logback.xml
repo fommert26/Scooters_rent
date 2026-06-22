@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+
+        <!-- ВЫКЛЮЧАЕМ ВСЁ КРОМЕ ERROR -->
+        <root level="ERROR">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </appender>
+
+    <!-- DEBUG – показывать все SQL-запросы Hibernate -->
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+
+    <!-- TRACE – показывать значения параметров в SQL-запросах -->
+    <logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
+
+    <!-- INFO – только основные сообщения HikariCP -->
+    <logger name="com.zaxxer.hikari" level="INFO"/>
+
+    <!-- Отключаем TRACE логи параметров запросов -->
+    <logger name="org.hibernate.orm.jdbc.bind" level="OFF"/>
+    <logger name="org.hibernate.orm.jdbc.extract" level="OFF"/>
+    <logger name="org.hibernate.engine.jdbc" level="OFF"/>
+
+    <!-- Отключаем DEBUG -->
+    <logger name="org.hibernate" level="OFF"/>
+    <logger name="org.hibernate.engine.jdbc" level="OFF"/>
+    <logger name="org.hibernate.resource.jdbc" level="OFF"/>
+    <logger name="org.hibernate.loader" level="OFF"/>
+    <logger name="org.hibernate.event" level="OFF"/>
+    <logger name="org.hibernate.internal" level="OFF"/>
+    <logger name="org.hibernate.persister" level="OFF"/>
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
